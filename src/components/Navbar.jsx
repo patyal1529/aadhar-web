@@ -7,8 +7,15 @@ import { Menu, X } from 'lucide-react';
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Top par smooth scroll karne ke liye helper function
+  const scrollToTop = (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setIsOpen(false);
+  };
+
   const navLinks = [
-    { label: 'Home', href: '/' },
+    { label: 'Home', href: '#', isHome: true },
     { label: 'Courses', href: '#courses' },
     { label: '✨ संकल्प-30', href: '#sankalp' },
     { label: 'Results', href: '#results' },
@@ -22,7 +29,11 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           
           {/* Logo + Institute Name Brand Section */}
-          <Link href="/" className="flex items-center gap-3 shrink-0 py-2 group">
+          <a 
+            href="#" 
+            onClick={scrollToTop} 
+            className="flex items-center gap-3 shrink-0 py-2 group cursor-pointer"
+          >
             <img 
               src="/aadhar-web/logo.jpg" 
               alt="Aadhar Institute Logo" 
@@ -36,7 +47,7 @@ export default function Navbar() {
                 HAMIRPUR (H.P.)
               </span>
             </div>
-          </Link>
+          </a>
 
           {/* Desktop Navigation Links */}
           <div className="hidden lg:flex items-center gap-6">
@@ -44,7 +55,8 @@ export default function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm font-semibold text-slate-700 hover:text-blue-900 transition-colors"
+                onClick={link.isHome ? scrollToTop : undefined}
+                className="text-sm font-semibold text-slate-700 hover:text-blue-900 transition-colors cursor-pointer"
               >
                 {link.label}
               </a>
@@ -84,8 +96,8 @@ export default function Navbar() {
             <a
               key={link.label}
               href={link.href}
-              onClick={() => setIsOpen(false)}
-              className="block py-2 text-base font-semibold text-slate-800 hover:text-blue-900"
+              onClick={link.isHome ? scrollToTop : () => setIsOpen(false)}
+              className="block py-2 text-base font-semibold text-slate-800 hover:text-blue-900 cursor-pointer"
             >
               {link.label}
             </a>
