@@ -1,6 +1,42 @@
+'use client';
+
 import React from 'react';
-import { siteMedia } from '../config/mediaAssets';
-import { GraduationCap, Award, BookOpen } from 'lucide-react';
+import { Award } from 'lucide-react';
+
+const facultyList = [
+  {
+    id: 1,
+    name: 'Mr. Attal Shama',
+    subject: 'Chemistry ',
+    experience: '12+ Years Experience',
+    expertise: 'Ex-Kota Faculty • NEET & JEE Advanced Specialist',
+    image: '/faculty/fac1.jpeg', // Aapki uploaded photo
+  },
+  {
+    id: 2,
+    name: 'Mrs Anjali Shama',
+    subject: 'BIOLOGY (Botany & Zoology)',
+    experience: '10+ Years Experience',
+    expertise: 'Neet And Other Entrance Exams Specialist • NCERT Line-by-Line Mastery',
+    image: '/faculty/fac2.jpeg',
+  },
+  {
+    id: 3,
+    name: 'Er. Rohit Thakur',
+    subject: 'Mathematics',
+    experience: '8+ Years Experience',
+    expertise: 'IIT-JEE Specialist • Advanced Problem-Solving Strategist',
+    image: '/faculty/fac3.jpeg',
+  },
+  {
+    id: 4,
+    name: 'Dr. Shalini Sharma',
+    subject: 'Biology (Botany & Zoology)',
+    experience: '9+ Years Experience',
+    expertise: 'NEET Specialist • NCERT Line-by-Line Mastery',
+    image: '/faculty/fac4.jpeg',
+  },
+];
 
 export default function FacultySection() {
   return (
@@ -22,16 +58,20 @@ export default function FacultySection() {
 
         {/* Faculty Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {siteMedia.faculty.map((mentor) => (
+          {facultyList.map((mentor) => (
             <div
               key={mentor.id}
               className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
             >
               {/* Teacher Image */}
-              <div className="h-60 bg-slate-200 overflow-hidden relative">
+              <div className="h-64 bg-slate-200 overflow-hidden relative">
                 <img
                   src={mentor.image}
                   alt={mentor.name}
+                  onError={(e) => {
+                    // Agar photo na mile to fallback placeholder image display karega
+                    e.currentTarget.src = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=60';
+                  }}
                   className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
                 />
               </div>
