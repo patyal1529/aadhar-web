@@ -24,7 +24,7 @@ export default function Navbar() {
           {/* Logo + Institute Name Brand Section */}
           <Link href="/" className="flex items-center gap-3 shrink-0 py-2 group">
             <img 
-              src="/logo.jpg" 
+              src="/aadhar-web/logo.jpg" 
               alt="Aadhar Institute Logo" 
               className="h-11 md:h-13 w-auto object-contain transition-transform group-hover:scale-105"
             />

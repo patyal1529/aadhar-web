@@ -3,6 +3,9 @@
 import React from 'react';
 import { Award } from 'lucide-react';
 
+// GitHub Pages par repo name auto handle karne ke liye
+const basePath = process.env.NODE_ENV === 'production' ? '/aadhar-web' : '';
+
 const facultyList = [
   {
     id: 1,
@@ -10,7 +13,7 @@ const facultyList = [
     subject: 'Chemistry ',
     experience: '12+ Years Experience',
     expertise: 'Ex-Kota Faculty • NEET & JEE Advanced Specialist',
-    image: '/faculty/fac1.jpeg', // Aapki uploaded photo
+    image: "/aadhar-web/faculty/fac1.jpeg",
   },
   {
     id: 2,
@@ -18,7 +21,7 @@ const facultyList = [
     subject: 'BIOLOGY (Botany & Zoology)',
     experience: '10+ Years Experience',
     expertise: 'Neet And Other Entrance Exams Specialist • NCERT Line-by-Line Mastery',
-    image: '/faculty/fac2.jpeg',
+    image: "/aadhar-web/faculty/fac2.jpeg",
   },
   {
     id: 3,
@@ -26,7 +29,7 @@ const facultyList = [
     subject: 'Mathematics',
     experience: '8+ Years Experience',
     expertise: 'IIT-JEE Specialist • Advanced Problem-Solving Strategist',
-    image: '/faculty/fac3.jpeg',
+    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=60',
   },
   {
     id: 4,
@@ -34,7 +37,7 @@ const facultyList = [
     subject: 'Biology (Botany & Zoology)',
     experience: '9+ Years Experience',
     expertise: 'NEET Specialist • NCERT Line-by-Line Mastery',
-    image: '/faculty/fac4.jpeg',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&auto=format&fit=crop&q=60',
   },
 ];
 
@@ -69,7 +72,6 @@ export default function FacultySection() {
                   src={mentor.image}
                   alt={mentor.name}
                   onError={(e) => {
-                    // Agar photo na mile to fallback placeholder image display karega
                     e.currentTarget.src = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=60';
                   }}
                   className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"

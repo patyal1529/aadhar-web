@@ -7,7 +7,7 @@ import { siteMedia } from '@/config/mediaAssets';
 // 14 student photos: public/students/s1.jpeg to s14.jpeg
 const studentImages = Array.from({ length: 14 }, (_, index) => ({
   id: index + 1,
-  src: `/students/s${index + 1}.jpeg`,
+  src: `/aadhar-web/students/s${index + 1}.jpeg`,
   alt: `Achiever ${index + 1}`
 }));
 
