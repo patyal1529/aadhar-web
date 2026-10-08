@@ -6,6 +6,7 @@ import CoursesSection from '../components/CoursesSection';
 import Sankalp30Feature from '../components/Sankalp30Feature';
 import ResultsGallery from '../components/ResultsGallery';
 import FacultySection from '../components/FacultySection';
+import ResidentialSection from '../components/ResidentialSection';
 import Footer from '../components/Footer';
 import FloatingActions from '../components/FloatingActions';
 
@@ -25,6 +26,7 @@ export default function HomePage() {
       <Sankalp30Feature />
       <ResultsGallery />
       <FacultySection />
+      <ResidentialSection />
       <Footer />
       <FloatingActions />
     </main>

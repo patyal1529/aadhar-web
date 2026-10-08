@@ -2,7 +2,17 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Sparkles, GraduationCap, CheckCircle2, FileText, ArrowRight } from 'lucide-react';
+import { 
+  Sparkles, 
+  GraduationCap, 
+  CheckCircle2, 
+  FileText, 
+  ArrowRight, 
+  Target, 
+  Stethoscope, 
+  Cpu, 
+  Flame 
+} from 'lucide-react';
 
 const rotatingExams = ['IIT-JEE', 'NEET', 'IISER', 'NEST', 'KVPY'];
 
@@ -51,8 +61,104 @@ export default function Sankalp30Feature() {
           </div>
 
           <p className="text-slate-300 text-sm md:text-base max-w-2xl mx-auto pt-2">
-            A dedicated, high-performance schooling-cum-coaching ecosystem engineered for top national-level competitive exam ranks.
+            A dedicated, high-performance schooling-cum-coaching ecosystem engineered for top national-level competitive exam ranks with customized streams.
           </p>
+        </div>
+
+        {/* Detailed Stream Breakdown (Medical, Non-Medical & Dream 11) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Medical Stream Card */}
+          <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between shadow-xl group hover:border-amber-400/50 transition-all">
+            <div className="space-y-4">
+              <div className="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                <Stethoscope className="w-5 h-5" />
+              </div>
+              <div>
+                <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider block">
+                  Medical Stream
+                </span>
+                <h3 className="text-xl font-black text-white mt-1">NEET Elite Wing</h3>
+              </div>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Focused exclusively on NCERT line-by-line mastery, high-yield biology problem solving, and rigorous speed building for NEET.
+              </p>
+              <ul className="space-y-2 text-xs text-slate-300">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <span>PCB Integrated Modules & Daily Tests</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <span>Strict batch limit of 30 medical rankers</span>
+                </li>
+              </ul>
+            </div>
+            <div className="mt-6 pt-4 border-t border-slate-800 text-[11px] font-semibold text-amber-400">
+              Target: Top Govt Medical Colleges (AIIMS/NEET)
+            </div>
+          </div>
+
+          {/* Non-Medical Stream Card */}
+          <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between shadow-xl group hover:border-amber-400/50 transition-all">
+            <div className="space-y-4">
+              <div className="w-10 h-10 rounded-xl bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400">
+                <Cpu className="w-5 h-5" />
+              </div>
+              <div>
+                <span className="text-xs font-bold text-blue-400 uppercase tracking-wider block">
+                  Non-Medical Stream
+                </span>
+                <h3 className="text-xl font-black text-white mt-1">JEE (Main & Adv) Wing</h3>
+              </div>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Intensive analytical problem solving, multi-concept physics and advanced mathematics sessions crafted by Kota experts.
+              </p>
+              <ul className="space-y-2 text-xs text-slate-300">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+                  <span>PCM Concept-depth & Advanced Sheets</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+                  <span>Computer-based Mock Tests (NTA Pattern)</span>
+                </li>
+              </ul>
+            </div>
+            <div className="mt-6 pt-4 border-t border-slate-800 text-[11px] font-semibold text-amber-400">
+              Target: IITs, NITs, IIITs, IISER & NEST
+            </div>
+          </div>
+
+          {/* Dream 11 Foundation Card */}
+          <div className="bg-slate-900/90 border border-amber-500/40 rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between shadow-xl group hover:border-amber-400 transition-all bg-gradient-to-b from-slate-900/95 to-amber-950/20">
+            <div className="space-y-4">
+              <div className="w-10 h-10 rounded-xl bg-amber-400/20 border border-amber-400/30 flex items-center justify-center text-amber-400">
+                <Flame className="w-5 h-5" />
+              </div>
+              <div>
+                <div className="inline-block bg-amber-400 text-slate-950 text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider mb-1">
+                  Class 11 Flagship
+                </div>
+                <h3 className="text-xl font-black text-white">Dream-11 Foundation</h3>
+              </div>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                For Class 10 to 11 moving students. Builds crystal-clear fundamentals from day one so students never face 11th backlog stress.
+              </p>
+              <ul className="space-y-2 text-xs text-slate-300">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                  <span>Schooling + National Coaching Integrated</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                  <span>Personalized 1-on-1 Faculty Mentorship</span>
+                </li>
+              </ul>
+            </div>
+            <div className="mt-6 pt-4 border-t border-slate-800 text-[11px] font-semibold text-amber-400">
+              Target: 2-Year Rigorous Foundation
+            </div>
+          </div>
         </div>
 
         {/* Eligibility Criteria Cards */}
@@ -60,7 +166,7 @@ export default function Sankalp30Feature() {
           <div className="flex items-center gap-2 border-b border-slate-800 pb-3">
             <GraduationCap className="w-6 h-6 text-amber-400" />
             <h3 className="text-xl md:text-2xl font-bold text-white">
-              Eligibility & Selection Procedure of Sankalp-30
+              Eligibility & Stream Allocation
             </h3>
           </div>
 
@@ -69,7 +175,7 @@ export default function Sankalp30Feature() {
             <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between shadow-xl">
               <div>
                 <span className="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-2">
-                  Stream 1
+                  Stream 1 (Dream-11)
                 </span>
                 <h4 className="text-lg font-black text-white mb-3">
                   SKLP-XI-30
@@ -84,7 +190,7 @@ export default function Sankalp30Feature() {
             <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between shadow-xl">
               <div>
                 <span className="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-2">
-                  Stream 2
+                  Stream 2 (Class 12th)
                 </span>
                 <h4 className="text-lg font-black text-white mb-3">
                   SKLP-XIIA-30
@@ -99,7 +205,7 @@ export default function Sankalp30Feature() {
             <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between shadow-xl">
               <div>
                 <span className="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-2">
-                  Stream 3
+                  Stream 3 (Target / Dropper)
                 </span>
                 <h4 className="text-lg font-black text-white mb-3">
                   SKLP-XII(B)-30
@@ -124,7 +230,7 @@ export default function Sankalp30Feature() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-slate-300 leading-relaxed">
             <div className="bg-slate-950/60 p-5 rounded-xl border border-slate-800/80">
               <h5 className="font-bold text-amber-300 text-base mb-2">
-                For SKLP-XI-30 & SKLP-XIIA :
+                For SKLP-XI-30 (Dream-11) & SKLP-XIIA :
               </h5>
               <p>
                 Course will be schooling-cum-coaching in which schooling is arranged from the best school of town by the Institute. After receiving application forms, an <strong>Aptitude Test</strong> will be conducted online on different dates, which will be intimated to students well in advance.
@@ -133,7 +239,7 @@ export default function Sankalp30Feature() {
 
             <div className="bg-slate-950/60 p-5 rounded-xl border border-slate-800/80">
               <h5 className="font-bold text-amber-300 text-base mb-2">
-                For SKLP-XIIB-30 :
+                For SKLP-XIIB-30 (Droppers / Repeaters) :
               </h5>
               <p>
                 <strong>Direct admission</strong> for students scoring more than <strong>80 in JEE</strong> and <strong>300 in NEET</strong>. For other eligible candidates, an aptitude test will be conducted in the Aadhar Institute Sankalp-30 wing during the month of June.
