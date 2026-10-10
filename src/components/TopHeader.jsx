@@ -3,69 +3,66 @@ import { Phone, Mail, Clock, MapPin, Award } from 'lucide-react';
 
 export default function TopHeader() {
   return (
-    <div className="bg-slate-900 text-slate-200 text-xs sm:text-sm border-b border-slate-800">
-      <div className="max-w-7xl mx-auto px-4 py-2 flex flex-col md:flex-row justify-between items-center gap-2">
+    <div className="bg-[#0b1b36] text-slate-200 text-xs border-b border-slate-800/60 select-none">
+      {/* Container aligned exactly with Navbar (px-4 sm:px-6 lg:px-8) */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex flex-col md:flex-row justify-between items-center gap-2">
         
-        {/* Left Side: Accreditation badge and location */}
-        <div className="flex items-center gap-4 flex-wrap justify-center">
-          <span className="inline-flex items-center gap-1.5 font-medium text-amber-400">
-            <Award className="w-4 h-4 text-amber-400" />
-            Himachal's No. 01 Coaching Institute
+        {/* Left Side: Tagline & Institute Accreditation */}
+        <div className="flex items-center gap-3 sm:gap-4 flex-wrap justify-center">
+          <span className="text-slate-300 font-medium tracking-wide">
+            Dream <span className="text-slate-500">|</span> Prepare <span className="text-slate-500">|</span> Achieve
           </span>
-          <span className="hidden sm:inline-block text-slate-600">|</span>
-          <span className="inline-flex items-center gap-1 text-slate-300">
-            <MapPin className="w-3.5 h-3.5 text-blue-400" />
-            Gandhi Chowk, Hamirpur, H.P.
+          <span className="hidden md:inline-block text-slate-700">|</span>
+          <span className="inline-flex items-center gap-1.5 font-semibold text-amber-400">
+            <Award className="w-3.5 h-3.5 text-amber-400" />
+            Himachal's Premier Coaching
           </span>
         </div>
 
-        {/* Right Side: Working hours, phone numbers, email and social icons */}
-        <div className="flex items-center gap-4 flex-wrap justify-center">
-          <span className="hidden lg:inline-flex items-center gap-1 text-slate-300">
-            <Clock className="w-3.5 h-3.5 text-slate-400" />
-            Mon - Sat: 9:00 AM - 10:00 PM
+        {/* Right Side: Contact, Location & Social */}
+        <div className="flex items-center gap-4 sm:gap-5 flex-wrap justify-center text-slate-300">
+          
+          {/* Location */}
+          <span className="inline-flex items-center gap-1.5 hover:text-white transition">
+            <MapPin className="w-3.5 h-3.5 text-amber-500" />
+            <span>Hamirpur, Himachal Pradesh</span>
           </span>
+
+          <span className="hidden sm:inline-block text-slate-700">|</span>
+
+          {/* Direct Calling */}
           <a 
             href="tel:+919418162827" 
-            className="inline-flex items-center gap-1 font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
+            className="inline-flex items-center gap-1.5 font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
           >
             <Phone className="w-3.5 h-3.5" />
-            +91 9418162827
+            <span>+91 9418162827</span>
           </a>
-          <a 
-            href="mailto:info@aadharinstitutehmr.com" 
-            className="hidden sm:inline-flex items-center gap-1 text-slate-300 hover:text-white transition-colors"
+
+          {/* WhatsApp Direct link */}
+          <a
+            href="https://wa.me/919418162827"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:inline-flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 font-medium transition"
           >
-            <Mail className="w-3.5 h-3.5 text-blue-400" />
-            info@aadharinstitutehmr.com
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            WhatsApp
           </a>
 
           {/* Social Links Divider & Icons */}
-          <span className="hidden sm:inline-block text-slate-700">|</span>
-          <div className="flex items-center gap-3">
+          <span className="hidden md:inline-block text-slate-700">|</span>
+          <div className="hidden md:flex items-center gap-3">
             {/* Facebook */}
             <a
               href="https://www.facebook.com/aadharinstitutehamirpur/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              className="text-slate-400 hover:text-blue-500 transition-colors"
+              className="text-slate-400 hover:text-blue-400 transition-colors"
             >
               <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
                 <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/>
-              </svg>
-            </a>
-
-            {/* Instagram */}
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="text-slate-400 hover:text-pink-500 transition-colors"
-            >
-              <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.79-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
               </svg>
             </a>
 
@@ -82,6 +79,7 @@ export default function TopHeader() {
               </svg>
             </a>
           </div>
+
         </div>
 
       </div>
