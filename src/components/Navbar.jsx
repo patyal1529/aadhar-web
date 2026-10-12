@@ -25,30 +25,30 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-xs transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-20">
+        <div className="flex items-center justify-between h-20 gap-2">
           
-          {/* Logo + Institute Branding */}
+          {/* Logo + Institute Branding - shrink prevent and layout wrap proof */}
           <a 
             href="#" 
             onClick={scrollToTop} 
-            className="flex items-center gap-2.5 sm:gap-3 shrink-0 py-1 group cursor-pointer"
+            className="flex items-center gap-2 sm:gap-3 shrink-0 py-1 group cursor-pointer min-w-0"
           >
             <img 
               src="/aadhar-web/logo.jpg" 
               alt="Aadhar Institute Logo" 
-              className="h-9 sm:h-11 md:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-105 shrink-0"
+              className="h-10 sm:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-105 shrink-0"
             />
-            <div className="flex flex-col justify-center">
-              <span className="text-sm sm:text-lg md:text-xl font-black tracking-tight text-slate-900 leading-none">
+            <div className="flex flex-col justify-center min-w-0">
+              <span className="text-[14px] xs:text-base sm:text-lg md:text-xl font-black tracking-tight text-slate-900 leading-none truncate">
                 AADHAR INSTITUTE
               </span>
-              <span className="text-[9px] sm:text-[10px] md:text-[11px] font-bold tracking-widest text-amber-600 uppercase mt-0.5">
+              <span className="text-[8px] xs:text-[9px] sm:text-[10px] md:text-[11px] font-bold tracking-widest text-amber-600 uppercase mt-1 shrink-0">
                 HAMIRPUR (H.P.)
               </span>
             </div>
           </a>
 
-          {/* Desktop Navigation Links (Only on Large Screens) */}
+          {/* Desktop Navigation Links */}
           <div className="hidden lg:flex items-center gap-7">
             <div className="flex items-center gap-6">
               {navLinks.map((link) => (
@@ -72,14 +72,20 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile Right Action: ONLY Hamburger Menu (Collision Fixed) */}
-          <div className="flex lg:hidden items-center shrink-0">
+          {/* Mobile Actions: Secure space and keep gap stable */}
+          <div className="flex lg:hidden items-center gap-1.5 xs:gap-2.5 shrink-0 ml-auto">
+            <Link
+              href="/register"
+              className="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-3 sm:px-4 py-1.5 rounded-full text-[10px] xs:text-xs shadow-sm transition whitespace-nowrap active:scale-95"
+            >
+              Register
+            </Link>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-xl text-slate-700 hover:bg-slate-100 transition focus:outline-none"
+              className="p-1.5 sm:p-2 rounded-xl text-slate-700 hover:bg-slate-100 transition focus:outline-none shrink-0"
               aria-label="Toggle navigation menu"
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
             </button>
           </div>
 
@@ -99,8 +105,6 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-
-          {/* Prominent Register Button inside Mobile Menu */}
           <div className="pt-2">
             <Link
               href="/register"
