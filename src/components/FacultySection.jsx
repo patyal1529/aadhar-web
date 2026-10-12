@@ -25,19 +25,19 @@ const facultyList = [
   },
   {
     id: 3,
-    name: 'Er. Rohit Thakur',
+    name: 'Mr. Vivek Kumar',
     subject: 'Mathematics',
     experience: '8+ Years Experience',
     expertise: 'IIT-JEE Specialist • Advanced Problem-Solving Strategist',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=60',
+    image: '/aadhar-web/faculty/fac3.jpeg',
   },
   {
     id: 4,
-    name: 'Dr. Shalini Sharma',
-    subject: 'Biology (Botany & Zoology)',
-    experience: '9+ Years Experience',
+    name: 'Dr. Shivam Sharma',
+    subject: 'Physics',
+    experience: '9+ Years Experience (Faculty PHD CE NIT Hamirpur)',
     expertise: 'NEET Specialist • NCERT Line-by-Line Mastery',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&auto=format&fit=crop&q=60',
+    image: '/aadhar-web/faculty/fac4.jpeg',
   },
 ];
 
