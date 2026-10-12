@@ -31,18 +31,18 @@ export default function Navbar() {
           <a 
             href="#" 
             onClick={scrollToTop} 
-            className="flex items-center gap-3 shrink-0 py-1 group cursor-pointer"
+            className="flex items-center gap-2.5 sm:gap-3 shrink-0 py-1 group cursor-pointer"
           >
             <img 
               src="/aadhar-web/logo.jpg" 
               alt="Aadhar Institute Logo" 
-              className="h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+              className="h-10 sm:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
             />
             <div className="flex flex-col justify-center">
-              <span className="text-lg sm:text-xl font-black tracking-tight text-slate-900 leading-none">
+              <span className="text-base sm:text-lg md:text-xl font-black tracking-tight text-slate-900 leading-none">
                 AADHAR INSTITUTE
               </span>
-              <span className="text-[10px] sm:text-[11px] font-bold tracking-widest text-amber-600 uppercase mt-1">
+              <span className="text-[9px] sm:text-[10px] md:text-[11px] font-bold tracking-widest text-amber-600 uppercase mt-1">
                 HAMIRPUR (H.P.)
               </span>
             </div>
@@ -72,11 +72,12 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile Actions */}
-          <div className="flex lg:hidden items-center gap-2.5">
+          {/* Mobile Actions: Collision bug fixed here */}
+          <div className="flex lg:hidden items-center gap-2 shrink-0">
+            {/* Tablet screens par button dikhega, phone screens par hidden rahega taaki naam par na chadhe */}
             <Link
               href="/register"
-              className="bg-amber-500 hover:bg-amber-600 text-white font-bold px-3.5 py-1.5 rounded-full text-xs shadow-sm transition"
+              className="hidden sm:inline-flex bg-amber-500 hover:bg-amber-600 text-white font-bold px-3.5 py-1.5 rounded-full text-xs shadow-sm transition"
             >
               Register
             </Link>
