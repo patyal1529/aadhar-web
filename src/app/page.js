@@ -4,7 +4,10 @@ import HeroSection from '../components/HeroSection';
 import StatsTicker from '../components/StatsTicker';
 import CoursesSection from '../components/CoursesSection';
 import Sankalp30Feature from '../components/Sankalp30Feature';
+import Dream11Feature from '../components/Dream11Feature';
+import SuccessStories from '../components/SuccessStories';
 import ResultsGallery from '../components/ResultsGallery';
+import OldAchievers from '../components/OldAchievers';
 import FacultySection from '../components/FacultySection';
 import ResidentialSection from '../components/ResidentialSection';
 import Footer from '../components/Footer';
@@ -24,7 +27,10 @@ export default function HomePage() {
       <StatsTicker />
       <CoursesSection />
       <Sankalp30Feature />
+      <Dream11Feature />
+      <SuccessStories />
       <ResultsGallery />
+      <OldAchievers />
       <FacultySection />
       <ResidentialSection />
       <Footer />
