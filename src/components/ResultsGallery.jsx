@@ -3,19 +3,24 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Award, Sparkles, Play, X } from 'lucide-react';
 
-// GitHub Pages subpath support for both local development and production
-const basePath = process.env.NODE_ENV === 'production' ? '/aadhar-web' : '';
-
-// 14 student photos: public/students/s1.jpeg to s14.jpeg
-const studentImages = Array.from({ length: 14 }, (_, index) => ({
-  id: index + 1,
-  src: `${basePath}/students/s${index + 1}.jpeg`,
-  alt: `Achiever ${index + 1}`
-}));
-
 export default function ResultsGallery() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const [basePath, setBasePath] = useState('');
+
+  // Localhost aur GitHub Pages ko runtime par automatically detect karega
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.location.pathname.startsWith('/aadhar-web')) {
+      setBasePath('/aadhar-web');
+    }
+  }, []);
+
+  // 14 student photos: '?v=2' browser cache bypass karega
+  const studentImages = Array.from({ length: 14 }, (_, index) => ({
+    id: index + 1,
+    src: `${basePath}/students/s${index + 1}.jpeg?v=2`,
+    alt: `Achiever ${index + 1}`
+  }));
 
   // Provided YouTube Video ID
   const youtubeVideoId = "iQK94z9Qtnw";
@@ -27,7 +32,7 @@ export default function ResultsGallery() {
     }, 3500);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [studentImages.length]);
 
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev === 0 ? studentImages.length - 1 : prev - 1));
