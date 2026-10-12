@@ -25,11 +25,11 @@ export default function ResultsGallery() {
   // Provided YouTube Video ID
   const youtubeVideoId = "iQK94z9Qtnw";
 
-  // Exact 3.5-second auto-slide
+  // Exact 10-second auto-slide
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % studentImages.length);
-    }, 3500);
+    }, 1000);
 
     return () => clearInterval(timer);
   }, [studentImages.length]);
