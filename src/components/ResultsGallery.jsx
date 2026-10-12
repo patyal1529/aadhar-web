@@ -3,10 +3,13 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Award, Sparkles, Play, X } from 'lucide-react';
 
+// GitHub Pages subpath support for both local development and production
+const basePath = process.env.NODE_ENV === 'production' ? '/aadhar-web' : '';
+
 // 14 student photos: public/students/s1.jpeg to s14.jpeg
 const studentImages = Array.from({ length: 14 }, (_, index) => ({
   id: index + 1,
-  src: `/aadhar-web/students/s${index + 1}.jpeg`,
+  src: `${basePath}/students/s${index + 1}.jpeg`,
   alt: `Achiever ${index + 1}`
 }));
 
@@ -21,7 +24,7 @@ export default function ResultsGallery() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % studentImages.length);
-    }, 3500); // 3.5 seconds for a smoother transition
+    }, 3500);
 
     return () => clearInterval(timer);
   }, []);
