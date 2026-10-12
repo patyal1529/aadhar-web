@@ -1,3 +1,5 @@
+export const dynamic = 'force-static';
+
 export default function sitemap() {
   const baseUrl = 'https://aadharinstitutehmr.com'; // Agar domain thoda alag hai toh yahan change kar lena
 
