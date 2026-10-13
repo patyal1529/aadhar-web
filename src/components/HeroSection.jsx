@@ -115,11 +115,11 @@ export default function HeroSection() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 text-left max-w-lg mx-auto lg:mx-0">
               <div className="flex items-center gap-2.5 text-slate-700 text-xs sm:text-sm font-medium">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                <span>Special Super-30 ("संकल्प-30") Batch</span>
+                <span> ("संकल्प-30") Batch</span>
               </div>
               <div className="flex items-center gap-2.5 text-slate-700 text-xs sm:text-sm font-medium">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                <span>Ex-Aakash & Senior Subject Mentors</span>
+                <span>FIITJEE VEDANTU & Senior Subject Mentors</span>
               </div>
               <div className="flex items-center gap-2.5 text-slate-700 text-xs sm:text-sm font-medium">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />

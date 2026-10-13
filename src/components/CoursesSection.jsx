@@ -21,7 +21,7 @@ export default function CoursesSection() {
       title: 'Target Batches (+1 & +2)',
       targetExams: 'IIT-JEE | NEET | Board Examinations',
       description: 'Comprehensive 2-year integrated course for Class 11th and 12th covering HPBOSE & CBSE syllabus alongside deep entrance concepts.',
-      features: ['Daily 4-hour rigorous lectures', 'Weekly OMR-based test series', 'Complete module package & DPPS'],
+      features: ['Daily 24-hour Supervision Of Teachers ', 'Weekly OMR-based test series', 'Complete module package & DPPS'],
       duration: '1 to 2 Academic Years',
       mode: 'Offline Classroom + Live Hybrid'
     },
@@ -31,7 +31,7 @@ export default function CoursesSection() {
       title: "Dropper's / Repeater's Batch",
       targetExams: 'JEE Mains & Adv | NEET UG | AIIMS | PGI',
       description: 'Specially structured intensive repeaters batch for +2 pass-out students targeting 650+ in NEET and 99 percentile in JEE.',
-      features: ['Syllabus completion in 6 months', 'Daily 2-hour doubt counter session', '100+ full-length mock tests'],
+      features: ['Syllabus completion in 6 months', 'Daily 24-hour Supervision Of Teachers ', '100+ full-length mock tests'],
       duration: '1 Year Full Time',
       mode: 'Residential / Day-Scholar'
     },

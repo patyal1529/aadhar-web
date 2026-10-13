@@ -20,6 +20,7 @@ export default function Navbar() {
     { label: 'Results', href: '#results' },
     { label: 'Faculty', href: '#faculty' },
     { label: 'Hostel & Residential', href: '#residential' },
+    { label: 'Careers', href: '#careers' },
   ];
 
   return (
