@@ -29,7 +29,7 @@ export default function ResultsGallery() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % studentImages.length);
-    }, 1000);
+    }, 10000);
 
     return () => clearInterval(timer);
   }, [studentImages.length]);
