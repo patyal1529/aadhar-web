@@ -129,6 +129,10 @@ export default function HeroSection() {
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                 <span>Regular Mock Tests & Performance Reports</span>
               </div>
+              <div className="flex items-center gap-2.5 text-slate-700 text-xs sm:text-sm font-medium">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>Comprehensive Residential Support</span>
+              </div>
             </div>
 
             {/* CTA Buttons */}

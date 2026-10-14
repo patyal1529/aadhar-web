@@ -74,7 +74,7 @@ export default function Sankalp30Feature() {
                   <Stethoscope className="w-6 h-6" />
                 </div>
                 <span className="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-black px-3 py-1 rounded-full">
-                  15 SEATS ONLY
+                  30 SEATS ONLY
                 </span>
               </div>
               
@@ -82,7 +82,7 @@ export default function Sankalp30Feature() {
                 <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider block">
                   Medical (NEET-UG Droppers)
                 </span>
-                <h3 className="text-2xl font-black text-white mt-1">Sankalp Medical 15</h3>
+                <h3 className="text-2xl font-black text-white mt-1">Sankalp Medical 30</h3>
               </div>
               
               <p className="text-sm text-slate-300 leading-relaxed">
@@ -101,7 +101,7 @@ export default function Sankalp30Feature() {
 
             <div className="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs font-semibold text-emerald-400">
               <span>Goal: Govt Medical Colleges (AIIMS / GMC)</span>
-              <span>15 Droppers</span>
+              <span>30 Droppers</span>
             </div>
           </div>
 
@@ -113,7 +113,7 @@ export default function Sankalp30Feature() {
                   <Cpu className="w-6 h-6" />
                 </div>
                 <span className="bg-blue-500/20 text-blue-300 border border-blue-500/30 text-xs font-black px-3 py-1 rounded-full">
-                  15 SEATS ONLY
+                  30 SEATS ONLY
                 </span>
               </div>
               
@@ -121,7 +121,7 @@ export default function Sankalp30Feature() {
                 <span className="text-xs font-bold text-blue-400 uppercase tracking-wider block">
                   Engineering (JEE Droppers)
                 </span>
-                <h3 className="text-2xl font-black text-white mt-1">Sankalp Non-Medical 15</h3>
+                <h3 className="text-2xl font-black text-white mt-1">Sankalp Non-Medical 30</h3>
               </div>
               
               <p className="text-sm text-slate-300 leading-relaxed">
@@ -140,7 +140,7 @@ export default function Sankalp30Feature() {
 
             <div className="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs font-semibold text-blue-400">
               <span>Goal: Top IITs, NITs & IIITs</span>
-              <span>15 Droppers</span>
+              <span>30 Droppers</span>
             </div>
           </div>
 
@@ -151,7 +151,7 @@ export default function Sankalp30Feature() {
           <div className="flex items-center gap-3">
             <Target className="w-5 h-5 text-amber-400 shrink-0" />
             <p className="text-sm text-slate-300">
-              Strict aggregate cap of <strong>30 Droppers only</strong> (15 Medical + 15 Non-Medical) to maintain quality.
+              Strict aggregate cap of <strong>30 Droppers only</strong> (30 Medical + 30 Non-Medical) to maintain quality.
             </p>
           </div>
           <Link
