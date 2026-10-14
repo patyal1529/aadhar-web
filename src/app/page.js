@@ -10,6 +10,7 @@ import ResultsGallery from '../components/ResultsGallery';
 import OldAchievers from '../components/OldAchievers';
 import FacultySection from '../components/FacultySection';
 import ResidentialSection from '../components/ResidentialSection';
+import BlogSection from '../components/BlogSection';
 import RecruitmentSection from '../components/RecruitmentSection';
 import Footer from '../components/Footer';
 import FloatingActions from '../components/FloatingActions';
@@ -34,6 +35,7 @@ export default function HomePage() {
       <OldAchievers />
       <FacultySection />
       <ResidentialSection />
+      <BlogSection />
       <RecruitmentSection />
       <Footer />
       <FloatingActions />
