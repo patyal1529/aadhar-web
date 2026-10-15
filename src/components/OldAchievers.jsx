@@ -5,10 +5,10 @@ import { Trophy } from 'lucide-react';
 
 const totalStudents = 66;
 
-// Exact working path ke sath mapping
+// Direct /achievers/ path from public folder
 const allStudents = Array.from({ length: totalStudents }, (_, i) => ({
   id: i + 1,
-  image: `/aadhar-web/achievers/r${i + 1}.jpg`,
+  image: `/achievers/r${i + 1}.jpg`,
 }));
 
 const row1Students = allStudents.slice(0, 33);
@@ -17,7 +17,7 @@ const row2Students = allStudents.slice(33, 66);
 export default function OldAchievers() {
   return (
     <section 
-      id="achievers-carousel" 
+      id="results" 
       className="py-20 bg-slate-950 text-white relative overflow-hidden border-t border-slate-800"
     >
       {/* Background Ambience Glow */}

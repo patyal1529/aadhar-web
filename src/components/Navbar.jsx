@@ -9,35 +9,41 @@ export default function Navbar() {
 
   const scrollToTop = (e) => {
     e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (typeof window !== 'undefined') {
+      if (window.location.pathname === '/') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        window.location.href = '/';
+      }
+    }
     setIsOpen(false);
   };
 
   const navLinks = [
-    { label: 'Home', href: '#', isHome: true },
-    { label: 'Courses', href: '#courses' },
-    { label: '✨ संकल्प-30', href: '#sankalp' },
-    { label: 'Results', href: '#results' },
-    { label: 'Faculty', href: '#faculty' },
-    { label: 'Hostel & Residential', href: '#residential' },
-    { label: 'Blog', href: '#blog' },
-    { label: 'Careers', href: '#careers' },
+    { label: 'Home', href: '/', isHome: true },
+    { label: 'Courses', href: '/#courses' },
+    { label: '✨ संकल्प-30', href: '/#sankalp' },
+    { label: 'Results', href: '/#results' },
+    { label: 'Faculty', href: '/#faculty' },
+    { label: 'Hostel & Residential', href: '/#residential' },
+    { label: 'Blog', href: '/#blog' },
+    { label: 'Careers', href: '/#careers' },
   ];
 
   return (
-    // Navbar locked at top on scroll with sticky
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-xs transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 gap-2">
           
           {/* Logo + Institute Branding */}
-          <a 
-            href="#" 
+          <Link 
+            href="/" 
             onClick={scrollToTop} 
             className="flex items-center gap-2.5 sm:gap-3 shrink-0 py-1 group cursor-pointer min-w-0"
           >
+            {/* Fixed Logo Path: direct /logo.jpg from public folder */}
             <img 
-              src="/aadhar-web/logo.jpg" 
+              src="/logo.jpg" 
               alt="Aadhar Institute Logo" 
               className="h-10 sm:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-105 shrink-0"
             />
@@ -49,7 +55,7 @@ export default function Navbar() {
                 HAMIRPUR (H.P.)
               </span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation Links */}
           <div className="hidden lg:flex items-center gap-7">
@@ -75,7 +81,7 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile Actions: Only Hamburger Menu (Zero Collision) */}
+          {/* Mobile Actions */}
           <div className="flex lg:hidden items-center shrink-0">
             <button
               onClick={() => setIsOpen(!isOpen)}

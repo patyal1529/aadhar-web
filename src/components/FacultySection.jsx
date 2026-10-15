@@ -3,17 +3,14 @@
 import React from 'react';
 import { Award } from 'lucide-react';
 
-// GitHub Pages par repo name auto handle karne ke liye
-const basePath = process.env.NODE_ENV === 'production' ? '/aadhar-web' : '';
-
 const facultyList = [
   {
     id: 1,
     name: 'Mr. Attal Shama',
-    subject: 'Chemistry ',
+    subject: 'Chemistry',
     experience: '12+ Years Experience',
     expertise: 'Ex-Kota Faculty • NEET & JEE Advanced Specialist',
-    image: "/aadhar-web/faculty/fac1.jpeg",
+    image: '/faculty/fac1.jpeg',
   },
   {
     id: 2,
@@ -21,7 +18,7 @@ const facultyList = [
     subject: 'BIOLOGY (Botany & Zoology)',
     experience: '10+ Years Experience',
     expertise: 'Neet And Other Entrance Exams Specialist • NCERT Line-by-Line Mastery',
-    image: "/aadhar-web/faculty/fac2.jpeg",
+    image: '/faculty/fac2.jpeg',
   },
   {
     id: 3,
@@ -29,7 +26,7 @@ const facultyList = [
     subject: 'Mathematics',
     experience: '8+ Years Experience',
     expertise: 'IIT-JEE Specialist • Advanced Problem-Solving Strategist',
-    image: '/aadhar-web/faculty/fac3.jpeg',
+    image: '/faculty/fac3.jpeg',
   },
   {
     id: 4,
@@ -37,7 +34,7 @@ const facultyList = [
     subject: 'Physics',
     experience: '9+ Years Experience (Faculty PHD CE NIT Hamirpur)',
     expertise: 'NEET Specialist • NCERT Line-by-Line Mastery',
-    image: '/aadhar-web/faculty/fac4.jpeg',
+    image: '/faculty/fac4.jpeg',
   },
 ];
 
@@ -71,9 +68,6 @@ export default function FacultySection() {
                 <img
                   src={mentor.image}
                   alt={mentor.name}
-                  onError={(e) => {
-                    e.currentTarget.src = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=60';
-                  }}
                   className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
                 />
               </div>
