@@ -109,7 +109,7 @@ export default function ResidentialSection() {
               Scheduled library access • Supervised evening doubts • Hygienic vegetarian mess
             </div>
             <a 
-              href="tel:+919816000000" 
+              href="tel:+917018224767" 
               className="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 text-xs font-bold transition"
             >
               <PhoneCall className="w-4 h-4" />
