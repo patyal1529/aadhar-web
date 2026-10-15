@@ -33,7 +33,7 @@ export default function HeroSection() {
 
     try {
       // NOTE: Replace YOUR_FORMSPREE_ID with your Formspree ID
-      const res = await fetch("https://formspree.io/f/YOUR_FORMSPREE_ID", {
+      const res = await fetch("https://formspree.io/f/xyekbevo", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({

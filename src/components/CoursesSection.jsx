@@ -89,7 +89,7 @@ export default function CoursesSection() {
 
     try {
       // NOTE: Replace with your actual Formspree endpoint ID
-      const res = await fetch("https://formspree.io/f/YOUR_FORMSPREE_ID", {
+      const res = await fetch("https://formspree.io/f/xyekbevo", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
