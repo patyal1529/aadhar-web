@@ -38,6 +38,12 @@ export const metadata = {
   alternates: {
     canonical: "/",
   },
+  // Google Search aur Browser Tabs ke liye Icons/Favicon
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/logo.jpg",
+    apple: "/logo.jpg",
+  },
   openGraph: {
     title: "Aadhar Institute Hamirpur | Top NEET & IIT-JEE Coaching in HP",
     description:
