@@ -21,7 +21,7 @@ export default function CoursesSection() {
       title: 'Target Batches (+1 & +2)',
       targetExams: 'IIT-JEE | NEET | Board Examinations',
       description: 'Comprehensive 2-year integrated course for Class 11th and 12th covering HPBOSE & CBSE syllabus alongside deep entrance concepts.',
-      features: ['Daily 24-hour Supervision Of Teachers ', 'Weekly OMR-based test series', 'Complete module package & DPPS'],
+      features: ['Daily 24-hour Supervision Of Teachers', 'Weekly OMR-based test series', 'Complete module package & DPPS'],
       duration: '1 to 2 Academic Years',
       mode: 'Offline Classroom + Live Hybrid'
     },
@@ -31,7 +31,7 @@ export default function CoursesSection() {
       title: "Dropper's / Repeater's Batch",
       targetExams: 'JEE Mains & Adv | NEET UG | AIIMS | PGI',
       description: 'Specially structured intensive repeaters batch for +2 pass-out students targeting 650+ in NEET and 99 percentile in JEE.',
-      features: ['Syllabus completion in 6 months', 'Daily 24-hour Supervision Of Teachers ', '100+ full-length mock tests'],
+      features: ['Syllabus completion in 6 months', 'Daily 24-hour Supervision Of Teachers', '100+ full-length mock tests'],
       duration: '1 Year Full Time',
       mode: 'Residential / Day-Scholar'
     },
@@ -88,7 +88,6 @@ export default function CoursesSection() {
     setLoading(true);
 
     try {
-      // NOTE: Replace with your actual Formspree endpoint ID
       const res = await fetch("https://formspree.io/f/xyekbevo", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
@@ -111,60 +110,75 @@ export default function CoursesSection() {
   };
 
   return (
-    <section id="courses" className="py-16 sm:py-20 bg-slate-50/70 border-t border-slate-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="courses" className="relative py-16 sm:py-24 bg-slate-950 overflow-hidden border-t border-white/10">
+      {/* 1. Background Image Layer */}
+      <img
+        src="/courses-bg.jpg"
+        alt="Courses Background"
+        className="absolute inset-0 w-full h-full object-cover opacity-35 pointer-events-none z-0"
+      />
+
+      {/* 2. Dark Gradient Overlay for Contrast */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/80 to-slate-950 pointer-events-none z-0" />
+
+      {/* 3. Ambient Glow Effects */}
+      <div className="absolute top-1/4 -left-20 w-80 h-80 bg-blue-600/15 rounded-full blur-3xl pointer-events-none z-0" />
+      <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none z-0" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs font-bold text-blue-700 uppercase tracking-widest bg-blue-100/70 px-3.5 py-1 rounded-full border border-blue-200/50">
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <span className="text-xs font-bold text-blue-300 uppercase tracking-widest bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-400/25 backdrop-blur-sm shadow-sm inline-flex items-center gap-1.5">
+            <Sparkles className="w-3.5 h-3.5 text-blue-400" />
             Targeted Academic Programs
           </span>
-          <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mt-3 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-4 tracking-tight">
             Programs Designed for Rank Holders
           </h2>
-          <p className="text-slate-600 text-sm sm:text-base mt-2">
+          <p className="text-slate-300 text-sm sm:text-base mt-3 leading-relaxed">
             Explore our specialized batches for IIT-JEE, NEET, Board Preparation, and Foundation in Hamirpur.
           </p>
         </div>
 
-        {/* 6 Courses Cards Grid - Exactly Aligned */}
+        {/* 6 Courses Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
           {courseList.map((course) => (
             <div
               key={course.id}
-              className="bg-white rounded-3xl border border-slate-200/80 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden group hover:border-blue-300 h-full"
+              className="bg-slate-900/85 backdrop-blur-md rounded-3xl border border-white/10 shadow-xl hover:shadow-2xl hover:shadow-blue-900/20 hover:border-blue-500/40 transition-all duration-300 flex flex-col justify-between overflow-hidden group h-full"
             >
               <div className="p-6 sm:p-7 flex flex-col flex-grow">
                 
                 {/* Badge & Mode */}
                 <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-200/50">
-                    <Sparkles className="w-3 h-3 text-blue-600" />
+                  <span className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-blue-300 bg-blue-500/15 px-3 py-1 rounded-full border border-blue-400/25">
+                    <Sparkles className="w-3 h-3 text-blue-400" />
                     {course.badge}
                   </span>
-                  <span className="text-[11px] font-semibold text-slate-500">
+                  <span className="text-[11px] font-semibold text-slate-400">
                     {course.mode}
                   </span>
                 </div>
 
                 {/* Course Title & Target */}
-                <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-700 transition-colors">
+                <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
                   {course.title}
                 </h3>
-                <p className="text-xs font-bold text-amber-600 mt-1 uppercase tracking-wide">
+                <p className="text-xs font-bold text-amber-400 mt-1 uppercase tracking-wide">
                   {course.targetExams}
                 </p>
 
                 {/* Description */}
-                <p className="text-slate-600 text-xs sm:text-sm mt-3 leading-relaxed flex-grow">
+                <p className="text-slate-300 text-xs sm:text-sm mt-3 leading-relaxed flex-grow">
                   {course.description}
                 </p>
 
                 {/* Feature Checkpoints */}
-                <div className="mt-5 space-y-2 border-t border-slate-100 pt-4">
+                <div className="mt-5 space-y-2 border-t border-white/10 pt-4">
                   {course.features.map((feat, i) => (
-                    <div key={i} className="flex items-center gap-2 text-xs text-slate-700">
-                      <CheckCircle className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                    <div key={i} className="flex items-center gap-2 text-xs text-slate-300">
+                      <CheckCircle className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                       <span>{feat}</span>
                     </div>
                   ))}
@@ -172,8 +186,8 @@ export default function CoursesSection() {
               </div>
 
               {/* Card Footer: Duration & Enquiry Trigger Button */}
-              <div className="p-4 sm:px-6 bg-slate-50/80 border-t border-slate-100 flex items-center justify-between mt-auto">
-                <span className="inline-flex items-center gap-1.5 text-xs text-slate-500 font-medium">
+              <div className="p-4 sm:px-6 bg-slate-950/70 border-t border-white/10 flex items-center justify-between mt-auto">
+                <span className="inline-flex items-center gap-1.5 text-xs text-slate-400 font-medium">
                   <Clock className="w-3.5 h-3.5 text-slate-400" />
                   {course.duration}
                 </span>
@@ -181,7 +195,7 @@ export default function CoursesSection() {
                 <button
                   type="button"
                   onClick={() => handleOpenEnquiry(course.title)}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-blue-700 hover:bg-blue-800 text-white text-xs font-bold transition-all duration-200 cursor-pointer shadow-sm shadow-blue-700/20"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold transition-all duration-200 cursor-pointer shadow-md shadow-blue-600/30 hover:scale-[1.03]"
                 >
                   <span>Enquire Now</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -194,17 +208,17 @@ export default function CoursesSection() {
 
       </div>
 
-      {/* Embedded Glassmorphism Modal (No external file needed) */}
+      {/* Embedded Modal */}
       {modalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
           <div 
-            className="relative w-full max-w-lg bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-100 animate-in fade-in zoom-in-95 duration-200"
+            className="relative w-full max-w-lg bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-white/20 animate-in fade-in zoom-in-95 duration-200"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
               onClick={() => setModalOpen(false)}
-              className="absolute top-5 right-5 p-2 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-all"
+              className="absolute top-5 right-5 p-2 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-all cursor-pointer"
               aria-label="Close"
             >
               <X className="w-5 h-5" />
@@ -238,7 +252,7 @@ export default function CoursesSection() {
                         placeholder="e.g. Aryan Sharma"
                         value={enquiryForm.fullName}
                         onChange={(e) => setEnquiryForm({ ...enquiryForm, fullName: e.target.value })}
-                        className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition"
+                        className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition bg-white"
                       />
                     </div>
                   </div>
@@ -256,7 +270,7 @@ export default function CoursesSection() {
                         pattern="[0-9]{10}"
                         value={enquiryForm.phone}
                         onChange={(e) => setEnquiryForm({ ...enquiryForm, phone: e.target.value })}
-                        className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition"
+                        className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition bg-white"
                       />
                     </div>
                   </div>
@@ -311,7 +325,7 @@ export default function CoursesSection() {
                 <button
                   type="button"
                   onClick={() => setModalOpen(false)}
-                  className="mt-6 px-6 py-2.5 bg-slate-900 text-white font-bold text-sm rounded-xl hover:bg-slate-800 transition"
+                  className="mt-6 px-6 py-2.5 bg-slate-900 text-white font-bold text-sm rounded-xl hover:bg-slate-800 transition cursor-pointer"
                 >
                   Done
                 </button>

@@ -41,7 +41,7 @@ export default function TopHeader() {
 
           {/* WhatsApp Direct link */}
           <a
-            href="https://wa.me/919418162827"
+            href="https://wa.me/917018224767"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden sm:inline-flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 font-medium transition"

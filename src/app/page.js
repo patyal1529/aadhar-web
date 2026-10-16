@@ -14,6 +14,7 @@ import BlogSection from '../components/BlogSection';
 import RecruitmentSection from '../components/RecruitmentSection';
 import Footer from '../components/Footer';
 import FloatingActions from '../components/FloatingActions';
+import AdmissionPopup from '../components/AdmissionPopup';
 
 export const metadata = {
   title: 'Aadhar Institute Hamirpur | Best IIT-JEE & NEET Coaching',
@@ -23,6 +24,7 @@ export const metadata = {
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-white text-slate-900 font-sans">
+      <AdmissionPopup />
       <TopHeader />
       <Navbar />
       <HeroSection />

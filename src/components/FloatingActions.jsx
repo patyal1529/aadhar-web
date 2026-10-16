@@ -3,7 +3,7 @@ import React from 'react';
 import { MessageCircle, Phone } from 'lucide-react';
 
 export default function FloatingActions() {
-  const whatsappNumber = "919418162827";
+  const whatsappNumber = "917018224767"; // Replace with your WhatsApp number in international format without '+' or spaces
   const defaultMessage = encodeURIComponent("Hello Aadhar Institute Hamirpur, I want to inquire about admissions for 2026-27 batches.");
 
   return (
